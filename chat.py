@@ -21,15 +21,15 @@ class ChatGUI:
 
         # Entry widget to type message
         self.message_entry = tk.Entry(self.root, width=80)
-        self.message_entry.bind("<Return>", self.send_message)
+        #self.message_entry.bind("<Return>", self.send_message)
         self.message_entry.pack(side=tk.LEFT, padx=5, pady=5)
 
         # Button to send message
         self.send_button = tk.Button(self.root, text="Send", command=self.send_message)
         self.send_button.pack(side=tk.RIGHT, padx=5, pady=5)
 
-        self.quit_button = tk.Button(self.root, text="Sair", command=self.quit)
-        self.quit_button.pack(side=tk.RIGHT, padx=5, pady=5)
+        #self.quit_button = tk.Button(self.root, text="Sair", command=self.quit)
+        #self.quit_button.pack(side=tk.RIGHT, padx=5, pady=5)
 
         self.root.protocol("WM_DELETE_WINDOW", self.quit)
 
