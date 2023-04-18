@@ -28,3 +28,8 @@ class Client:
             except:
                 self.client_socket.close()
                 break
+    def close_connection(self):
+        """
+        Fecha a conexão.
+        """
+        self.client_socket.close()

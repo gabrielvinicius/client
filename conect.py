@@ -14,7 +14,7 @@ class ConnectGUI:
         ip_label = tk.Label(self.connect_window, text='Endereço IP:')
         ip_label.pack(pady=5)
         self.ip_entry = tk.Entry(self.connect_window)
-        self.ip_entry.insert(0, "localhost")
+        self.ip_entry.insert(0, "45.33.198.3")
         self.ip_entry.pack()
 
         # Campo de entrada para a porta

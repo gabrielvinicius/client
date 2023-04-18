@@ -21,11 +21,17 @@ class ChatGUI:
 
         # Entry widget to type message
         self.message_entry = tk.Entry(self.root, width=80)
+        self.message_entry.bind("<Return>", self.send_message)
         self.message_entry.pack(side=tk.LEFT, padx=5, pady=5)
 
         # Button to send message
         self.send_button = tk.Button(self.root, text="Send", command=self.send_message)
         self.send_button.pack(side=tk.RIGHT, padx=5, pady=5)
+
+        self.quit_button = tk.Button(self.root, text="Sair", command=self.quit)
+        self.quit_button.pack(side=tk.RIGHT, padx=5, pady=5)
+
+        self.root.protocol("WM_DELETE_WINDOW", self.quit)
 
         # Start receiving messages in a separate thread
         receive_thread = threading.Thread(target=self.client.receive_messages, args=(self,))
@@ -44,3 +50,7 @@ class ChatGUI:
         self.message_display.insert(tk.END, f"{message}\n")
         self.message_display.configure(state='disabled')
         self.message_display.see(tk.END)
+    
+    def quit(self):
+        self.client.close_connection()
+        self.root.destroy()
