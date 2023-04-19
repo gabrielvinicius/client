@@ -21,8 +21,8 @@ class ChatGUI:
 
         # Entry widget to type message
         self.message_entry = tk.Entry(self.root, width=80)
-        #self.message_entry.bind("<Return>", self.send_message)
         self.message_entry.pack(side=tk.LEFT, padx=5, pady=5)
+        self.message_entry.bind("<Return>", self.send_message)
 
         # Button to send message
         self.send_button = tk.Button(self.root, text="Send", command=self.send_message)
@@ -39,7 +39,7 @@ class ChatGUI:
 
         self.root.mainloop()
 
-    def send_message(self):
+    def send_message(self,event=None):
         message = self.message_entry.get()
         if message:
             self.client.send_message(message)
