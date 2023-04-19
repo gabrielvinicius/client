@@ -38,9 +38,6 @@ class ConnectGUI:
         self.connect_window.mainloop()
 
     def connect_to_server(self):
-        """
-        Cria uma instância da classe ChatGUI usando as informações de conexão fornecidas pelo usuário.
-        """
         ip = self.ip_entry.get()
         port = self.port_entry.get()
         username = self.username_entry.get()

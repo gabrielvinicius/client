@@ -25,7 +25,7 @@ class ChatGUI:
         self.message_entry.bind("<Return>", self.send_message)
 
         # Button to send message
-        self.send_button = tk.Button(self.root, text="Send", command=self.send_message)
+        self.send_button = tk.Button(self.root, text="Enviar", command=self.send_message)
         self.send_button.pack(side=tk.RIGHT, padx=5, pady=5)
 
         self.quit_button = tk.Button(self.root, text="Sair", command=self.quit)

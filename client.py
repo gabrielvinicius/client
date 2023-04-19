@@ -7,19 +7,11 @@ class Client:
         self.client_socket.connect((ip, port))
         self.client_socket.send(username.encode())
 
-        # Inicia uma thread para receber mensagens do servidor
-        # threading.Thread(target=self.receive_messages).start()
-
     def send_message(self, message):
-        """
-        Envia uma mensagem para o servidor.
-        """
+
         self.client_socket.send(message.encode())
 
     def receive_messages(self, chat_gui):
-        """
-        Recebe mensagens do servidor e imprime na tela.
-        """
         while True:
             try:
                 message = self.client_socket.recv(1024).decode()
@@ -28,8 +20,6 @@ class Client:
             except:
                 self.client_socket.close()
                 break
+
     def close_connection(self):
-        """
-        Fecha a conexão.
-        """
         self.client_socket.close()
