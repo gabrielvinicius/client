@@ -6,7 +6,10 @@ from chat import ChatGUI
 
 
 class ConnectGUI:
-    def __init__(self,IP,PORTA):
+    def __init__(self):
+        IP = '45.33.198.3'
+        PORTA = '9999'
+    #def __init__(self,IP,PORTA):
         self.connect_window = tk.Tk()
         self.connect_window.title('Conectar')
         self.connect_window.geometry('300x200')

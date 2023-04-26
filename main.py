@@ -1,9 +1,9 @@
 # This is a sample Python script.
 from conect import ConnectGUI
-import os
-from dotenv import load_dotenv
+#import os
+#from dotenv import load_dotenv
 
-load_dotenv()
+#load_dotenv()
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -22,5 +22,6 @@ load_dotenv()
 # Inicia a tela de conexão
 
 if __name__ == "__main__":
-    connect_gui = ConnectGUI(os.environ['IP'],os.environ['PORTA'])
+    connect_gui = ConnectGUI()
+    #connect_gui = ConnectGUI(os.environ['IP'],os.environ['PORTA'])
 
