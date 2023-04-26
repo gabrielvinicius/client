@@ -4,8 +4,9 @@ from tkinter import messagebox
 from chat import ChatGUI
 
 
+
 class ConnectGUI:
-    def __init__(self):
+    def __init__(self,IP,PORTA):
         self.connect_window = tk.Tk()
         self.connect_window.title('Conectar')
         self.connect_window.geometry('300x200')
@@ -14,14 +15,14 @@ class ConnectGUI:
         ip_label = tk.Label(self.connect_window, text='Endereço IP:')
         ip_label.pack(pady=5)
         self.ip_entry = tk.Entry(self.connect_window)
-        self.ip_entry.insert(0, "45.33.198.3")
+        self.ip_entry.insert(0, IP)
         self.ip_entry.pack()
 
         # Campo de entrada para a porta
         port_label = tk.Label(self.connect_window, text='Porta:')
         port_label.pack(pady=5)
         self.port_entry = tk.Entry(self.connect_window)
-        self.port_entry.insert(0, "9999")
+        self.port_entry.insert(0, PORTA)
         self.port_entry.pack()
 
         # Campo de entrada para o nome de usuário
